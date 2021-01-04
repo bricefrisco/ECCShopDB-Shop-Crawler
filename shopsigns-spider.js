@@ -84,10 +84,11 @@ const updateShopSigns = () => {
       })
       .then(start);
   };
-
   bot.once('spawn', getRegions);
 };
 
 module.exports = {
   updateShopSigns,
 };
+
+updateShopSigns();

@@ -20,7 +20,8 @@ const getToken = () => {
 };
 
 const fetchToken = () => {
-  console.log('fetching token');
+  console.log('Token expired or nonexistent. Fetching new token...');
+
   return fetch(process.env.API_ENDPOINT + '/api/v3/authentication', {
     method: 'POST',
     headers: {

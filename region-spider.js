@@ -10,8 +10,6 @@ const PROPERTIES = {
   checkTimeoutInterval: 2 * 60 * 60 * 1000,
 };
 
-console.log(PROPERTIES);
-
 const updateRegions = () => {
   let bot = mineflayer.createBot(PROPERTIES);
   bot.on('kicked', (reason) => console.log('Bot kicked: ' + reason));
@@ -23,5 +21,3 @@ const updateRegions = () => {
 module.exports = {
   updateRegions,
 };
-
-updateRegions();
