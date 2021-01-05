@@ -21,7 +21,7 @@ jobs:
 
       - run:
           name: Login to DockerHub
-          command: docuer login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+          command: docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
 
       - setup_remote_docker:
           version: 19.03.13
