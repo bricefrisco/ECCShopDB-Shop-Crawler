@@ -27,6 +27,10 @@ jobs:
           version: 19.03.13
 
       - run:
+          name: Install dependencies
+          command: npm install
+
+      - run:
           name: Webpack JS files
           command: npm run build
 
