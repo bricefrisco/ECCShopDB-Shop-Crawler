@@ -21,3 +21,5 @@ const updateRegions = () => {
 module.exports = {
   updateRegions,
 };
+
+updateRegions();
