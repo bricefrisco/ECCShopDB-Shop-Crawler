@@ -19,12 +19,12 @@ jobs:
     steps:
       - checkout
 
+      - setup_remote_docker:
+          version: 19.03.13
+
       - run:
           name: Login to DockerHub
           command: docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-
-      - setup_remote_docker:
-          version: 19.03.13
 
       - run:
           name: Install dependencies
