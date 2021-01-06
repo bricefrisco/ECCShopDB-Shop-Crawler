@@ -12,7 +12,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: node/node:12-buster-slim
+      - image: circleci/node:14.9.0-buster
 
     working_directory: ~/application
 
