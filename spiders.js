@@ -5,7 +5,7 @@ const cron = require('node-cron');
 
 console.log('Scheduling tasks.');
 
-cron.schedule('0 5,9,13,15,17,19,21,23,25,1 * * *', () => {
+cron.schedule('0 5,9,13,15,17,19,21,23,1,3 * * *', () => {
   console.log('Scheduler for updating chest shops has started.');
   shopSignsSpider.updateShopSigns();
 });
