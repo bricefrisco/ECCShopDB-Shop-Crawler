@@ -90,5 +90,3 @@ const updateShopSigns = () => {
 module.exports = {
   updateShopSigns,
 };
-
-updateShopSigns();

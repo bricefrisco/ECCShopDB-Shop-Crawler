@@ -1,0 +1,35 @@
+{
+  "name": "eccshopdb-crawler",
+  "version": "1.0.0",
+  "description": "ShopDB Minecraft bot/crawler",
+  "private": true,
+  "dependencies": {
+    "jwt-decode": "^3.1.2",
+    "mineflayer": "^2.40.1",
+    "node-cron": "^2.0.3",
+    "node-fetch": "^2.6.1",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
+  },
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bricefrisco/eccshopdb-crawler.git"
+  },
+  "keywords": [
+    "eccshopdb",
+    "crawler",
+    "eccshopdb-crawler"
+  ],
+  "author": "bricefrisco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bricefrisco/eccshopdb-crawler/issues"
+  },
+  "homepage": "https://github.com/bricefrisco/eccshopdb-crawler#readme"
+}

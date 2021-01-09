@@ -1,0 +1,47 @@
+version: 2.1
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:14.9.0-buster
+
+    working_directory: ~/application
+
+    steps:
+      - checkout
+
+      - setup_remote_docker:
+          version: 19.03.13
+
+      - run:
+          name: Login to DockerHub
+          command: docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+
+      - run:
+          name: Install dependencies
+          command: npm install
+
+      - run:
+          name: Webpack JS files
+          command: npm run build
+
+      - run:
+          name: Build docker image
+          command: docker build -t bricefrisco/eccshopdb-crawler:$CIRCLE_BUILD_NUM .
+
+      - run:
+          name: Push docker image
+          command: docker push bricefrisco/eccshopdb-crawler:$CIRCLE_BUILD_NUM
+
+      - run:
+          name: Deploy to server
+          command: ssh -o StrictHostKeyChecking=no $HOST "/usr/local/sbin/upgrade-docker-image.sh bricefrisco/eccshopdb-crawler $CIRCLE_BUILD_NUM $DOCKER_ENV_ARGS"
